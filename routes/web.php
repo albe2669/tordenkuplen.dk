@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/enter-the-thunderdome', function () {
+    return view('thunderdome/thunderdome');
+});
