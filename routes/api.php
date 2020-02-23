@@ -17,4 +17,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/get-random-number', 'API\RandomNumberController@get');
+Route::prefix('random')->group(function () {
+    Route::post('number', 'API\RandomController@number');
+    Route::post('list', 'API\RandomController@list');
+    Route::post('group', 'API\RandomController@group');
+    Route::post('element', 'API\RandomController@element');
+});

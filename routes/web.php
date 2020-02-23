@@ -11,10 +11,4 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/enter-the-thunderdome', function () {
-    return view('thunderdome/thunderdome');
-});
+Route::get('{all}', 'SpaController@index')->where('all', '^((?!api).)*');
