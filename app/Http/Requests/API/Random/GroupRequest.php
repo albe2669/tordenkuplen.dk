@@ -25,7 +25,8 @@ class GroupRequest extends FormRequest
     {
         return [
             'size' => 'integer|required',
-            'list' => 'required|array'
+            'list' => 'required|array',
+            'strict' => 'required|boolean'
         ];
     }
 }

@@ -8,7 +8,7 @@
                         <div class="contact_us">
                             <div style="padding: 40px 40px 40px 40px;" class="contact_us_iner">
                                 <h1>Tordenkuplen</h1>
-                                <p>Denne hjemmeside er en tilfældigheds generator baseret på en intern joke om "The Thunderdome" fra Mad Max filmen "Beyond Thunderdome" også kendt som "Mad Max i tordenkuplen"</p>
+                                <p>Denne hjemmeside er en tilfældighedsgenerator baseret på en intern joke om "The Thunderdome" fra Mad Max filmen "Beyond Thunderdome" også kendt som "Mad Max i tordenkuplen"</p>
                                 <div class="banner_btn">
                                     <a href="https://en.wikipedia.org/wiki/Mad_Max_Beyond_Thunderdome" class="btn_1">learn
                                         more <span><img src="img/icon/left.svg" alt=""></span>
@@ -64,7 +64,7 @@
                             </div>
                         </div>
                         <div class="col-md-4 mt-sm-30">
-                            <h3 class="mb-20">Liste baseret</h3>
+                            <h3 class="mb-20">Dan grupper</h3>
                             <div class="">
                                 <group-component/>
                             </div>

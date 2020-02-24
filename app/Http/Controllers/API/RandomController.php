@@ -10,6 +10,7 @@ use App\Http\Requests\API\Random\GroupRequest;
 use App\Http\Requests\API\Random\ListRequest;
 use App\Http\Requests\API\Random\NumberRequest;
 use App\Http\Requests\API\Random\ElementRequest;
+use Illuminate\Support\Facades\Log;
 
 
 class RandomController extends Controller
@@ -36,7 +37,7 @@ class RandomController extends Controller
         $tmp = $arr[$a];
         $arr[$a] = $arr[$b];
         $arr[$b] = $tmp;
-        
+
         return $arr;
     }
 
@@ -63,7 +64,7 @@ class RandomController extends Controller
     public function list(ListRequest $request) {
         $list = $request->validated()['list'];
         $list = $this->formatAsObject($list);
-        
+
         return response()->json([
             'message' => 'Success',
             'result' => $this->shuffleArray($list)
@@ -73,17 +74,44 @@ class RandomController extends Controller
     public function group(GroupRequest $request) {
         $list = $request->validated()['list'];
         $size = $request->validated()['size'];
+        $strict = $request->validated()['strict'];
 
         $groups = array();
         $list = $this->shuffleArray($list);
+
         $i = 0;
         while(true) {
             $slice = array_slice($list, $i, $size);
-            
+
             array_push($groups, $this->formatAsObject($slice));
             $i += $size;
             if (count($slice) < $size || $i > count($list)-1) {
                 break;
+            }
+        }
+
+        if ($strict) {
+            if (count($groups[count($groups)-1]) < $size-1) {
+                $i = 0;
+                $remove = $groups[count($groups)-1];
+                array_pop($groups);
+
+                while(true) {
+                    Log::debug($groups[$i]);
+                    $groups[$i][] = $remove[0];
+                    array_shift($remove);
+
+                    Log::debug($groups[$i]);
+
+                    if (count($remove) < 1) {
+                        break;
+                    }
+
+                    $i += 1;
+                    if ($i >= count($groups)) {
+                        $i = 0;
+                    }
+                }
             }
         }
 
@@ -96,7 +124,7 @@ class RandomController extends Controller
     public function element(ElementRequest $request) {
         $list = $request->validated()['list'];
         $list = $this->formatAsObject($list);
-        
+
         return response()->json([
             'message' => 'Success',
             'result' => $list[$this->getRandomNumber(0, count($list)-1)]

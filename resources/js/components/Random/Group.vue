@@ -4,9 +4,16 @@
             <p>Undskyld, der var problemer med dine deltagere, de nægtede. Kom venligst tilbage senere når vi har disciplineret dem.</p>
         </div>
         <div v-if="!status.loading">
-            <p>Hvor mange grupper skal der fordeles i?</p>
+            <p>Hvor mange personer skal der være pr gruppe?</p>
             <div class="form-group">
                 <input type="number" v-model="input.size" class="form-control">
+            </div>
+            <div class="switch-wrap d-flex justify-content-between">
+                <p>Spred ligeligt</p>
+                <div class="primary-checkbox">
+                    <input id="default-checkbox" type="checkbox" v-model="input.strict" class="form-control">
+                    <label for="default-checkbox"></label>
+                </div>
             </div>
             <p>Indsæt personer der skal fordeles. Adskil med ny linje</p>
             <div class="form-group">
@@ -41,7 +48,8 @@ export default {
         return {
             input: {
                 size: 4,
-                elements: ""
+                elements: "",
+                strict: false,
             },
             data: {
                 groups: [],
@@ -57,18 +65,19 @@ export default {
         onSubmit() {
             this.status.loading = true;
             let data = this.input.elements.split('\n');
-            
+
             console.log(data);
-            
+
             axios
                 .post('/api/random/group', {
                     'size': this.input.size,
-                    'list': data
+                    'list': data,
+                    'strict': this.input.strict,
                 })
                 .then(response => {
                     console.log(response);
                     this.data.groups = response.data.result;
-                    
+
                     this.status.loading = false;
                     this.status.ready = true;
                     this.status.error = false;
