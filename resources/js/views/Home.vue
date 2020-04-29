@@ -58,7 +58,6 @@
                 <div class="section-top-border">
                     <div class="row">
                         <div class="col-md-4">
-                            <h3 class="mb-20">Bland liste</h3>
                             <div class="">
                                 <list-component/>
                             </div>
