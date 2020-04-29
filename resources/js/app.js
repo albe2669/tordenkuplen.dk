@@ -1,7 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Vuetify from 'vuetify'
+import 'vuetify/dist/vuetify.min.css'
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
+Vue.use(Vuetify)
 
 // Views
 import App from './views/App'
@@ -26,6 +29,7 @@ const router = new VueRouter({
 
 const app = new Vue({
     el: '#app',
+    vuetify: new Vuetify(),
     components: { App },
     router,
 });
