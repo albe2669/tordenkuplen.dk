@@ -83,10 +83,13 @@
 </template>
 
 <script>
-import Group from '../components/Random/Group'
-import Element from '../components/Random/Element'
-import List from '../components/Random/List'
-import Number from '../components/Random/Number'
+// Lists
+import Group    from '../components/Random/ListBased/Group'
+import Element  from '../components/Random/ListBased/Element'
+import List     from '../components/Random/ListBased/List'
+
+// Numbers
+import Number   from '../components/Random/NumberBased/Number'
 
 export default {
     components: {
