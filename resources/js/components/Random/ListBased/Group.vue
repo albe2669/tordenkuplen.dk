@@ -4,35 +4,54 @@
             <p>Undskyld, der var problemer med dine deltagere, de nægtede. Kom venligst tilbage senere når vi har disciplineret dem.</p>
         </div>
         <div v-if="!status.loading">
-            <p>Hvor mange personer skal der være pr gruppe?</p>
-            <div class="form-group">
-                <input type="number" v-model="input.size" class="form-control">
-            </div>
-            <div class="switch-wrap d-flex justify-content-between">
-                <p>Spred ligeligt</p>
-                <div class="primary-checkbox">
-                    <input id="default-checkbox" type="checkbox" v-model="input.strict" class="form-control">
-                    <label for="default-checkbox"></label>
-                </div>
-            </div>
-            <p>Indsæt personer der skal fordeles. Adskil med ny linje</p>
-            <div class="form-group">
-                <textarea  id="elements" v-model="input.elements" class="form-control w-100"></textarea>
-            </div>
-            <br>
-            <div class="form-group">
-                <button v-on:click="onSubmit" class="genric-btn danger radius" style="display:block;margin-left: auto;margin-right: auto;">Split like Moses</button>
-            </div>
-            <div v-if="status.ready">
-                <div v-for="group in data.groups" v-bind:key="group.id">
-                    <blockquote class="generic-blockquote">
-                        <p style="font-weight: bold;">Gruppe {{group.id + 1}}</p>
-                        <div v-for="element in group.data" v-bind:key="element.id">
-                            <p>{{ element.data }}</p>
-                        </div>
-                    </blockquote>
-                </div>
-            </div>
+            <v-card class="mx-auto">
+                <v-card-title>Dan grupper</v-card-title>
+                <v-container>
+                    <form @submit.prevent="onSubmit" class="md-layout">
+                        <v-text-field
+                            v-model="input.size"
+                            type='number'
+                            label="Elementer pr gruppe"
+                            required
+                            integer
+                        ></v-text-field> <!-- TODO: THIS-->
+                        <v-switch
+                            v-model="input.strict"
+                            label="Spred ligeligt"
+                        ></v-switch>
+                        <v-textarea
+                            v-model="input.elements"
+                            label="Elementer der skal blandes"
+                            outlined
+                        ></v-textarea>
+                        <v-btn
+                            color="error"
+                            type="submit"
+                            style="display:block;margin-left: auto;margin-right: auto;"
+                        >Split like Moses</v-btn>
+                    </form>
+                </v-container>
+                <v-container v-if="status.ready">
+                    <div v-for="group in data.groups" v-bind:key="group.id">
+                        <v-card style="margin-bottom:10px">
+                            <v-card-title>
+                                Gruppe {{group.id + 1}}
+                            </v-card-title>
+                            <div style="padding:10px">
+                                <v-simple-table>
+                                    <template v-slot:default>
+                                        <tbody>
+                                            <tr v-for="element in group.data" v-bind:key="element.id">
+                                                <td>{{element.data}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </template>
+                                </v-simple-table>
+                            </div>
+                        </v-card>
+                    </div>
+                </v-container>
+            </v-card>
         </div>
         <div v-if="status.loading">
             <img class="lava-lamp" src="/svg/lava_lamp.svg" alt="Lava lamp">

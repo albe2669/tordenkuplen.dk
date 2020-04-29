@@ -63,7 +63,6 @@
                             </div>
                         </div>
                         <div class="col-md-4 mt-sm-30">
-                            <h3 class="mb-20">Dan grupper</h3>
                             <div class="">
                                 <group-component/>
                             </div>
