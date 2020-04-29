@@ -21,7 +21,7 @@
                             <div class="canven-menu-warp">
                                 <div class="canven-menu-iner">
                                     <ul>
-                                        <li v-for="link in nav" :key="link">
+                                        <li v-for="link in nav" :key=link.id>
                                             <router-link :to="{ name: link.destination }">{{ link.text }}</router-link>
                                         </li>
                                     </ul>
@@ -41,10 +41,12 @@ export default {
         return {
             nav: [
                 {
+                    "id": 1,
                     "destination": "home",
                     "text": "Hjem",
                 },
                 {
+                    "id": 2,
                     "destination": "hello",
                     "text": "About"
                 },
