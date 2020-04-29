@@ -2305,7 +2305,7 @@ __webpack_require__.r(__webpack_exports__);
       this.status.loading = true;
       var data = this.input.elements.split('\n');
       console.log(data);
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/api/random/list', {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/api/random/1', {
         'list': data
       }).then(function (response) {
         console.log(response);
