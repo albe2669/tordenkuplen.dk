@@ -68,7 +68,6 @@
                             </div>
                         </div>
                         <div class="col-md-4 mt-sm-30">
-                            <h3 class="mb-20">Tilfældigt element</h3>
                             <div class="">
                                 <element-component/>
                             </div>
