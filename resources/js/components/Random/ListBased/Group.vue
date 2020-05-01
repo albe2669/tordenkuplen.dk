@@ -37,7 +37,7 @@
                             <v-card-title>
                                 Gruppe {{group.id + 1}}
                             </v-card-title>
-                            <div style="padding:10px">
+                            <div style="padding-left: 10px;padding-right: 10px;">
                                 <v-simple-table>
                                     <template v-slot:default>
                                         <tbody>
