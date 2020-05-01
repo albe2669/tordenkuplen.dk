@@ -4,20 +4,43 @@
             <p>Undskyld, der var problemer med dine deltagere, de nægtede. Kom venligst tilbage senere når vi har disciplineret dem.</p>
         </div>
         <div v-if="!status.loading">
-            <p>Indsæt elementer der skal vælges fra. Adskil med ny linje</p>
-            <div class="form-group">
-                <textarea  id="elements" v-model="input.elements" class="form-control w-100"></textarea>
-            </div>
-            <br>
-            <div class="form-group">
-                <button v-on:click="onSubmit" class="genric-btn danger radius" style="display:block;margin-left: auto;margin-right: auto;">One element leaves</button>
-            </div>
-            <div v-if="status.ready">
-                <blockquote class="generic-blockquote">
-                    <p style="font-weight: bold;">Element {{data.element.id + 1}}</p>
-                    <p>{{ data.element.data }}</p>
-                </blockquote>
-            </div>
+            <v-card class="mx-auto">
+                <v-card-title>
+                    Tilfældigt element
+                </v-card-title>
+                <v-container>
+                    <form class="md-layout" @submit.prevent="onSubmit">
+                        <v-textarea
+                            v-model="input.elements"
+                            label="Elementer der skal blandes"
+                            outlined
+                        ></v-textarea>
+                        <v-btn
+                            color="error"
+                            type="submit"
+                            style="display:block;margin-left: auto;margin-right: auto;"
+                        >One element leaves</v-btn>
+                    </form>
+                </v-container>
+                <v-container v-if="status.ready">
+                    <v-card>
+                        <v-card-title>
+                            Element {{data.element.id + 1}}
+                        </v-card-title>
+                        <div style="padding-left: 10px;padding-right: 10px;">
+                            <v-simple-table>
+                                <template v-slot:default>
+                                    <tbody>
+                                    <tr>
+                                        <td>{{ data.element.data }}</td>
+                                    </tr>
+                                    </tbody>
+                                </template>
+                            </v-simple-table>
+                        </div>
+                    </v-card>
+                </v-container>
+            </v-card>
         </div>
         <div v-if="status.loading">
             <img class="lava-lamp" src="/svg/lava_lamp.svg" alt="Lava lamp">
