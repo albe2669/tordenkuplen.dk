@@ -22,6 +22,7 @@
                         v-model="input.elements"
                         label="Elementer der skal blandes"
                         outlined
+                        required
                     ></v-textarea>
                     <v-btn
                         color="error"
@@ -75,8 +76,8 @@ export default {
             status: {
                 loading: false,
                 error: {
-                    status: true,
-                    error: 'Error test',
+                    status: false,
+                    error: '',
                 },
                 ready: false,
             }
@@ -105,7 +106,8 @@ export default {
                 })
                 .catch(e => {
                     console.log(e);
-                    this.status.error = true;
+                    this.status.error.status = true;
+                    this.status.error.error = `Noget gik galt, kontakt venligst udvikleren. Kode: ${2}`; 
                     this.status.loading = false;
                 })
         }
