@@ -89,7 +89,7 @@ export default {
 
                     this.status.loading = false;
                     this.status.ready = true;
-                    this.status.error = false;
+                    this.status.error.status = false;
                 })
                 .catch(e => {
                     console.log(e);

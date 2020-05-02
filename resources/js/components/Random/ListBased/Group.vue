@@ -88,8 +88,6 @@ export default {
             this.status.loading = true;
             let data = this.input.elements.split('\n');
 
-            console.log(data);
-
             axios
                 .post('/api/random/group', {
                     'size': this.input.size,
@@ -102,12 +100,13 @@ export default {
 
                     this.status.loading = false;
                     this.status.ready = true;
-                    this.status.error = false;
+                    this.status.error.status = false;
                 })
                 .catch(e => {
-                    console.log(e);
+                    console.log(e.data);
+
                     this.status.error.status = true;
-                    this.status.error.error = `Noget gik galt, kontakt venligst udvikleren. Kode: ${2}`; 
+                    this.status.error.error = `Noget gik galt, kontakt venligst udvikleren. Kode`; 
                     this.status.loading = false;
                 })
         }
