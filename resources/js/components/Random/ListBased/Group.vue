@@ -103,7 +103,7 @@ export default {
                     this.status.error.status = false;
                 })
                 .catch(e => {
-                    console.log(e.data);
+                    console.log(e.response);
 
                     this.status.error.status = true;
                     this.status.error.error = `Noget gik galt, kontakt venligst udvikleren. Kode`; 
