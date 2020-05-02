@@ -2501,7 +2501,7 @@ ul {
 .banner_part {
   height: 890px;
   position: relative;
-  background-image: url(../img/banner_bg_1.png);
+  background-image: url(../../../public/img/banner_bg_1.png);
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: center;
@@ -2964,7 +2964,7 @@ ul {
 /* line 1, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_service_part.scss */
 .service_part {
   padding: 445px 0px 130px;
-  background-image: url(../img/services_bg.png);
+  background-image: url(../../../public/img/services_bg.png);
   background-position: center left;
   background-size: contain;
   background-repeat: no-repeat;
@@ -3122,7 +3122,7 @@ ul {
 /************** project part starrt**************/
 /* line 2, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_project_part.scss */
 .project_part {
-  background-image: url(../img/project/project_bg.png);
+  background-image: url(../../../public/img/project/project_bg.png);
   background-position: center left;
   background-size: contain;
   background-repeat: no-repeat;
@@ -3420,7 +3420,7 @@ ul {
 .blog_part {
   position: relative;
   padding: 0 0 140px;
-  background: url(../img/blog/blog_bg.png);
+  background: url(../../../public/img/blog/blog_bg.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: content;
@@ -3915,7 +3915,7 @@ ul {
   width: 100%;
   height: 100%;
   content: "";
-  background-image: url(../img/single_about_overlay.png);
+  background-image: url(../../../public/img/single_about_overlay.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -5445,7 +5445,7 @@ h6 {
 
 /* line 798, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_elements.scss */
 .primary-checkbox input:checked + label {
-  background: url(../img/elements/primary-check.png) no-repeat center center/cover;
+  background: url(../../../public/img/elements/primary-check.png) no-repeat center center/cover;
   border: none;
 }
 
@@ -5487,7 +5487,7 @@ h6 {
 
 /* line 835, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_elements.scss */
 .confirm-checkbox input:checked + label {
-  background: url(../img/elements/success-check.png) no-repeat center center/cover;
+  background: url(../../../public/img/elements/success-check.png) no-repeat center center/cover;
   border: none;
 }
 
@@ -5535,7 +5535,7 @@ h6 {
 
 /* line 876, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_elements.scss */
 .disabled-checkbox input:checked + label {
-  background: url(../img/elements/disabled-check.png) no-repeat center center/cover;
+  background: url(../../../public/img/elements/disabled-check.png) no-repeat center center/cover;
   border: none;
 }
 
@@ -5577,7 +5577,7 @@ h6 {
 
 /* line 913, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_elements.scss */
 .primary-radio input:checked + label {
-  background: url(../img/elements/primary-radio.png) no-repeat center center/cover;
+  background: url(../../../public/img/elements/primary-radio.png) no-repeat center center/cover;
   border: none;
 }
 
@@ -5619,7 +5619,7 @@ h6 {
 
 /* line 950, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_elements.scss */
 .confirm-radio input:checked + label {
-  background: url(../img/elements/success-radio.png) no-repeat center center/cover;
+  background: url(../../../public/img/elements/success-radio.png) no-repeat center center/cover;
   border: none;
 }
 
@@ -5667,7 +5667,7 @@ h6 {
 
 /* line 991, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_elements.scss */
 .disabled-radio input:checked + label {
-  background: url(../img/elements/disabled-radio.png) no-repeat center center/cover;
+  background: url(../../../public/img/elements/disabled-radio.png) no-repeat center center/cover;
   border: none;
 }
 
@@ -6136,7 +6136,7 @@ h6 {
 /************* breadcrumb css start *****************/
 /* line 2, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_breadcrumb.scss */
 .breadcrumb_bg {
-  background-image: url("../img/breadcrumb.png");
+  background-image: url("../../../public/img/breadcrumb.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

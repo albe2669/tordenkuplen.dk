@@ -1,5 +1,6 @@
 <template>
     <div>
+        <status code="hello" type="error" content="hello world"></status>
         <div id="errors" v-if="status.error">
             <p>Undskyld, der var problemer med dine deltagere, de nægtede. Kom venligst tilbage senere når vi har disciplineret dem.</p>
         </div>
@@ -80,7 +81,7 @@ export default {
                 .then(response => {
                     console.log(response);
                     this.data.element = response.data.result;
-                    
+
                     this.status.loading = false;
                     this.status.ready = true;
                     this.status.error = false;

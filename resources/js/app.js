@@ -1,15 +1,17 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Vuetify from 'vuetify'
-import 'vuetify/dist/vuetify.min.css'
+//import 'vuetify/dist/vuetify.min.css'
+
 
 Vue.use(VueRouter);
-Vue.use(Vuetify)
+Vue.use(Vuetify);
 
 // Views
 import App from './views/App'
 import Hello from './views/Hello'
 import Home from './views/Home'
+
 
 const router = new VueRouter({
     mode: 'history',
