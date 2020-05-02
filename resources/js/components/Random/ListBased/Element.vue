@@ -13,13 +13,13 @@
                         v-model="input.elements"
                         label="Elementer der skal blandes"
                         outlined
+                        required
                     ></v-textarea>
                     <v-btn
                         color="error"
                         type="submit"
                         style="display:block;margin-left: auto;margin-right: auto;"
                         v-if="!status.loading"
-                        required
                     >One element leaves</v-btn>
                 </form>
                 <div v-if="status.loading">
