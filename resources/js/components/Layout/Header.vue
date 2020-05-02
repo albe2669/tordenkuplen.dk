@@ -1,5 +1,5 @@
 <template>
-    <header class="main_menu home_menu">
+    <header class="main_menu home_menu" style="padding: 0px">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-12">

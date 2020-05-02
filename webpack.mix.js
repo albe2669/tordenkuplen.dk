@@ -13,7 +13,15 @@ const path = require('path');
 
 mix
     .sass('resources/sass/app.scss', 'public/css')
+    .sass('resources/sass/import.scss', 'public/css')
     .js('resources/js/app.js', 'public/js')
+    .scripts([
+        'public/js/import/jquery-1.12.1.min.js',
+        'public/js/import/owl.carousel.min.js',
+        'public/js/import/slick.min.js',
+        'public/js/import/jquery.nice-select.min.js',
+        'public/js/import/custom.js',
+    ], 'public/js/all.js')
     .babelConfig({
         plugins: ['@babel/plugin-syntax-dynamic-import'],
     })

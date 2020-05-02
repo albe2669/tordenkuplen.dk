@@ -7,7 +7,7 @@
                     <div class="col-lg-6">
                         <div class="contact_us">
                             <div style="padding: 40px 40px 40px 40px;" class="contact_us_iner">
-                                <h1>Tordenkuplen fucking ay</h1>
+                                <h1>Tordenkuplen</h1>
                                 <p>Denne hjemmeside er en tilfældighedsgenerator baseret på en intern joke om "The Thunderdome" fra Mad Max filmen "Beyond Thunderdome" også kendt som "Mad Max i tordenkuplen"</p>
                                 <div class="banner_btn">
                                     <a href="https://en.wikipedia.org/wiki/Mad_Max_Beyond_Thunderdome" class="btn_1">learn

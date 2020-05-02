@@ -75,7 +75,7 @@
                     <div class="col-md-4 mt-sm-30">
                         <h3 class="mb-20">Tilfældig person</h3>
                         <div class="">
-                            
+
                         </div>
                     </div>
                 </div>

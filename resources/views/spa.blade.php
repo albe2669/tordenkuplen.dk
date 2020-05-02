@@ -9,6 +9,7 @@
     <link rel="icon" href="img/favicon.png">
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/import.css') }}">
 </head>
 
 <body>
@@ -18,6 +19,7 @@
         </v-app>
     </div>
 
+    <script src="{{ mix('js/all.js') }}"></script>
     <script src="{{ mix('js/app.js') }}"></script>
     @yield('extra-js')
 </body>
