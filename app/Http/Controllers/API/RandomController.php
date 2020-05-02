@@ -43,8 +43,8 @@ class RandomController extends Controller
 
     private function shuffleArray($arr) {
         $i = count($arr)-1;
-        for ($i = $i; $i > 0; $i--) {
-            $j = $this->getRandomNumber(0, $i+1);
+        for (; $i > 0; $i--) {
+            $j = $this->getRandomNumber(0, $i);
 
             $arr = $this->swap($arr, $i, $j);
         }
@@ -91,7 +91,7 @@ class RandomController extends Controller
         }
 
         if ($strict) {
-            if (count($groups[count($groups)-1]) < $size-1) {
+            if (count($groups[count($groups)-1]) / $size < 0.75) {
                 $i = 0;
                 $remove = $groups[count($groups)-1];
                 array_pop($groups);
