@@ -1,61 +1,60 @@
 <template>
     <div>
-        <div id="errors" v-if="status.error">
-            <p>Undskyld, der var problemer med dine deltagere, de nægtede. Kom venligst tilbage senere når vi har disciplineret dem.</p>
-        </div>
-        <div v-if="!status.loading">
-            <v-card class="mx-auto">
-                <v-card-title>Dan grupper</v-card-title>
-                <v-container>
-                    <form @submit.prevent="onSubmit" class="md-layout">
-                        <v-text-field
-                            v-model="input.size"
-                            type='number'
-                            label="Elementer pr gruppe"
-                            required
-                            integer
-                        ></v-text-field> <!-- TODO: THIS-->
-                        <v-switch
-                            v-model="input.strict"
-                            label="Spred ligeligt"
-                        ></v-switch>
-                        <v-textarea
-                            v-model="input.elements"
-                            label="Elementer der skal blandes"
-                            outlined
-                        ></v-textarea>
-                        <v-btn
-                            color="error"
-                            type="submit"
-                            style="display:block;margin-left: auto;margin-right: auto;"
-                        >Split like Moses</v-btn>
-                    </form>
-                </v-container>
-                <v-container v-if="status.ready">
-                    <div v-for="group in data.groups" v-bind:key="group.id">
-                        <v-card style="margin-bottom:10px">
-                            <v-card-title>
-                                Gruppe {{group.id + 1}}
-                            </v-card-title>
-                            <div style="padding-left: 10px;padding-right: 10px;">
-                                <v-simple-table>
-                                    <template v-slot:default>
-                                        <tbody>
-                                            <tr v-for="element in group.data" v-bind:key="element.id">
-                                                <td>{{element.data}}</td>
-                                            </tr>
-                                        </tbody>
-                                    </template>
-                                </v-simple-table>
-                            </div>
-                        </v-card>
-                    </div>
-                </v-container>
-            </v-card>
-        </div>
-        <div v-if="status.loading">
-            <img class="lava-lamp" src="/svg/lava_lamp.svg" alt="Lava lamp">
-        </div>
+        <v-card class="mx-auto">
+            <v-card-title>Dan grupper</v-card-title>
+            <v-container>
+                <v-alert type='error' v-if="status.error.status">
+                    {{ status.error.error }}
+                </v-alert>
+                <form @submit.prevent="onSubmit" class="md-layout">
+                    <v-text-field
+                        v-model="input.size"
+                        type='number'
+                        label="Elementer pr gruppe"
+                        required
+                        integer
+                    ></v-text-field> <!-- TODO: THIS-->
+                    <v-switch
+                        v-model="input.strict"
+                        label="Spred ligeligt"
+                    ></v-switch>
+                    <v-textarea
+                        v-model="input.elements"
+                        label="Elementer der skal blandes"
+                        outlined
+                    ></v-textarea>
+                    <v-btn
+                        color="error"
+                        type="submit"
+                        style="display:block;margin-left: auto;margin-right: auto;"
+                        v-if="!status.loading"
+                    >Split like Moses</v-btn>
+                </form>
+                <div v-if="status.loading">
+                    <img class="lava-lamp" src="/svg/lava_lamp.svg" alt="Lava lamp">
+                </div>
+            </v-container>
+            <v-container v-if="status.ready">
+                <div v-for="group in data.groups" v-bind:key="group.id">
+                    <v-card style="margin-bottom:10px">
+                        <v-card-title>
+                            Gruppe {{group.id + 1}}
+                        </v-card-title>
+                        <div style="padding-left: 10px;padding-right: 10px;">
+                            <v-simple-table>
+                                <template v-slot:default>
+                                    <tbody>
+                                        <tr v-for="element in group.data" v-bind:key="element.id">
+                                            <td>{{element.data}}</td>
+                                        </tr>
+                                    </tbody>
+                                </template>
+                            </v-simple-table>
+                        </div>
+                    </v-card>
+                </div>
+            </v-container>
+        </v-card>
     </div>
 </template>
 
@@ -75,7 +74,10 @@ export default {
             },
             status: {
                 loading: false,
-                error: false,
+                error: {
+                    status: true,
+                    error: 'Error test',
+                },
                 ready: false,
             }
         }
@@ -110,12 +112,3 @@ export default {
     }
 }
 </script>
-
-
-<style>
-.lava-lamp {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-</style>
