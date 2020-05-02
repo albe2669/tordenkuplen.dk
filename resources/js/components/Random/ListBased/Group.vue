@@ -106,7 +106,7 @@ export default {
                     console.log(e.response);
 
                     this.status.error.status = true;
-                    this.status.error.error = `Noget gik galt, kontakt venligst udvikleren. Kode`; 
+                    this.status.error.error = `Noget gik galt, kontakt venligst udvikleren. Kode ${e.response.status}`; 
                     this.status.loading = false;
                 })
         }

@@ -94,7 +94,7 @@ export default {
                 .catch(e => {
                     console.log(e.response);
                     this.status.error.status = true;
-                    this.status.error.error = `Noget gik galt, kontakt venligst udvikleren. Kode: ${2}`; 
+                    this.status.error.error = `Noget gik galt, kontakt venligst udvikleren. Kode ${e.response.status}`;
                     this.status.loading = false;
                 })
         }
