@@ -11,7 +11,7 @@
                                 <p>Denne hjemmeside er en tilfældighedsgenerator baseret på en intern joke om "The Thunderdome" fra Mad Max filmen "Beyond Thunderdome" også kendt som "Mad Max i tordenkuplen"</p>
                                 <div class="banner_btn">
                                     <a href="https://en.wikipedia.org/wiki/Mad_Max_Beyond_Thunderdome" class="btn_1">learn
-                                        more <span><img src="img/icon/left.svg" alt=""></span>
+                                        more <span><img src="images/icon/left.svg" alt=""></span>
                                     </a>
                                 </div>
                             </div>
@@ -28,21 +28,21 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="single_special_part border_left">
-                            <img src="img/icon/special_1.svg" alt="">
+                            <img src="images/icon/special_1.svg" alt="">
                             <div class="single_special_text">
                                 <h3>Two men enter</h3>
                                 <p>One man leaves</p>
                             </div>
                         </div>
                         <div class="single_special_part border_left">
-                            <img src="img/icon/special_2.svg" alt="">
+                            <img src="images/icon/special_2.svg" alt="">
                             <div class="single_special_text">
                                 <h3>Two men enter</h3>
                                 <p>One man leaves</p>
                             </div>
                         </div>
                         <div class="single_special_part border_left">
-                            <img src="img/icon/special_3.svg" alt="">
+                            <img src="images/icon/special_3.svg" alt="">
                             <div class="single_special_text">
                                 <h3>Two men enter</h3>
                                 <p>One man leaves</p>

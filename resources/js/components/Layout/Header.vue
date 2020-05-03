@@ -7,7 +7,7 @@
                         <div class="search_icon">
                         </div>
                         <div class="logo">
-                            <a href="index.html"><img src="img/logo.png" style="height:70px;" alt="#"></a>
+                            <a href="/"><img src="images/logo.png" style="height:70px;" alt="#"></a>
                         </div>
                         <span class="menu-trigger visible-xs">
                             <span></span>
