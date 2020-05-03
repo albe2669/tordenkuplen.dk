@@ -25,7 +25,8 @@ class NumberRequest extends FormRequest
     {
         return [
             'max' => 'integer|required',
-            'min' => 'integer|required'
+            'min' => 'integer|required',
+            'amount' => 'integer|required'
         ];
     }
 }

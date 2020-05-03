@@ -55,9 +55,15 @@ class RandomController extends Controller
     public function number(NumberRequest $request) {
         $args = $request->validated();
 
+        $nums = array();
+
+        for ($i = 0; $i < $args['amount']; $i++) {
+            array_push($nums, $this->getRandomNumber($args['min'], $args['max']));
+        }
+
         return response()->json([
             'message' => 'Success',
-            'result' => $this->getRandomNumber($args['min'], $args['max'])
+            'result' => $this->formatAsObject($nums)
         ], 200);
     }
 
