@@ -72,6 +72,11 @@
                                 <element-component/>
                             </div>
                         </div>
+                        <div class="col-md-4 mt-sm-30">
+                            <div class="">
+                                <number-component/>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
