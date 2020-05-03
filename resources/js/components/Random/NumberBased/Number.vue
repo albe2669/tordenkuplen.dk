@@ -33,7 +33,7 @@
                         type="submit"
                         style="display:block;margin-left: auto;margin-right: auto;"
                         v-if="!status.loading"
-                    >Split like Moses</v-btn>
+                    >Justice is only a roll of the dice</v-btn>
                 </form>
                 <div v-if="status.loading">
                     <img class="lava-lamp" src="/svg/lava_lamp.svg" alt="Lava lamp">
